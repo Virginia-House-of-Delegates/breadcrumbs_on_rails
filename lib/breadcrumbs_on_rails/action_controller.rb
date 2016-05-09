@@ -80,7 +80,7 @@ module BreadcrumbsOnRails
 
       def render_breadcrumbs(options = {}, &block)
         builder = (options.delete(:builder) || Breadcrumbs::SimpleBuilder).new(self, breadcrumbs, options)
-        content = builder.render.html_safe
+        content = "<strong>#{builder.render}</strong>".html_safe
         if block_given?
           capture(content, &block)
         else
