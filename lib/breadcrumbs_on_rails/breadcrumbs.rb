@@ -81,7 +81,7 @@ module BreadcrumbsOnRails
       def render
         @elements.collect do |element|
           render_element(element)
-        end.join(@options[:separator] || " &raquo; ")
+        end.join(@options[:separator] || " <i class='fa fa-chevron-right' aria-hidden='true'></i> ")
       end
 
       def render_element(element)
